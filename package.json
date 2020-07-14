@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/paulsloderbeck/readmeGenerator/issues"
   },
-  "homepage": "https://github.com/paulsloderbeck/readmeGenerator#readme"
+  "homepage": "https://github.com/paulsloderbeck/readmeGenerator#readme",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "inquirer": "^7.3.2",
+    "util": "^0.12.3"
+  }
 }
