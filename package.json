@@ -1,0 +1,19 @@
+{
+  "name": "readmegenerator",
+  "version": "1.0.0",
+  "description": "cli readmegenerator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paulsloderbeck/readmeGenerator.git"
+  },
+  "author": "paul sloderbeck",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paulsloderbeck/readmeGenerator/issues"
+  },
+  "homepage": "https://github.com/paulsloderbeck/readmeGenerator#readme"
+}
