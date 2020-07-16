@@ -5,7 +5,7 @@ const fs = require("fs")
 const writeFileAsync = util.promisify(fs.writeFile);
 
 function getInput() {
-    inquirer.prompt([
+    return inquirer.prompt([
         {
             type: "input",
             message: "What is your project title?",
@@ -34,7 +34,7 @@ function getInput() {
         {
             type: "input",
             message: "Please enter test instructions",
-            name: "testinstructions"
+            name: "test"
         },
         {
             type: "list",
@@ -56,12 +56,29 @@ function getInput() {
             message: "What is your email address?",
             name: "email"
         }
-    ])
-        .then(function (answers) {
-            console.log(answers)
-        })
+    ]);
 }
 
+function generateMarkdown(answers) {
+    return `
+# ${answers.title}
+## Description
+${answers.description}
+## Installation
+${answers.install}
+## Usage
+${answers.usage}
+## Contributing
+${answers.guidelines}
+## Tests
+${answers.test}
+## License
+This application features a ${answers.license} license.
+## Questions
+Please find me on github at <https://github.com/${answers.github}>
+You can also contact me directly at ${answers.email} with any additional questions.
+`
+}
 // array of questions for user
 const questions = [
 
@@ -71,10 +88,14 @@ const questions = [
 function writeToFile(fileName, data) {
 }
 
-// function to initialize program
-function init() {
-    getInput();
-}
-
-// function call to initialize program
-init();
+getInput()
+    .then(function (answers) {
+        const markdown = generateMarkdown(answers);
+        return writeFileAsync("readme.md", markdown);
+    })
+    .then(function () {
+        console.log("Succesfully created readme.md");
+    })
+    .catch(function (err) {
+        console.log(err);
+    })
