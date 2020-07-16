@@ -62,30 +62,34 @@ function getInput() {
 function generateMarkdown(answers) {
     return `
 # ${answers.title}
-## Description
+
+![${answers.license} license badge](./${answers.license}.png)
+## Table of Contents
+1. [Description](#description)
+2. [Installation](#installation)
+3. [Usage](#usage)
+4. [Contributing](#constributing)
+5. [Tests](#tests)
+6. [License](#license)
+7. [Questions](#questions)
+
+
+### Description
 ${answers.description}
-## Installation
+### Installation
 ${answers.install}
-## Usage
+### Usage
 ${answers.usage}
-## Contributing
+### Contributing
 ${answers.guidelines}
-## Tests
+### Tests
 ${answers.test}
-## License
+### License
 This application features a ${answers.license} license.
-## Questions
+### Questions
 Please find me on github at <https://github.com/${answers.github}>
 You can also contact me directly at ${answers.email} with any additional questions.
 `
-}
-// array of questions for user
-const questions = [
-
-];
-
-// function to write README file
-function writeToFile(fileName, data) {
 }
 
 getInput()
