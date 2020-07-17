@@ -31,4 +31,4 @@ This application features a MIT license.
 Please find me on github at <https://github.com/paulsloderbeck>
 You can also contact me directly at paul.sloderbeck@gmail.com with any additional questions.
 
-[Screenshot](./screenshot.png)
+![Screenshot](./screenshot.png)
