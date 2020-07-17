@@ -64,6 +64,7 @@ function generateMarkdown(answers) {
 # ${answers.title}
 
 ![${answers.license} license badge](./${answers.license}.png)
+
 ## Table of Contents
 1. [Description](#description)
 2. [Installation](#installation)
